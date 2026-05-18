@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — GUI Yuntao</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --cv-blue: #1E50BF;
+      --cv-blue-soft: #2A5ECC;
+    }
+    html, body { font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    .cv-blue-bg { background-color: var(--cv-blue); }
+    .cv-blue-bg-soft { background-color: var(--cv-blue-soft); }
+    .cv-blue-text { color: var(--cv-blue); }
+    .cv-blue-border { border-color: var(--cv-blue); }
+    .head-left {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .head-right {
+      font-weight: 600;
+      color: var(--cv-blue);
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+    .head-right-rule {
+      border-bottom: 1px solid var(--cv-blue);
+      margin-top: 0.15rem;
+    }
+    .head-left-rule {
+      border-bottom: 1px solid rgba(255,255,255,0.7);
+      margin-top: 0.15rem;
+      margin-bottom: 0.6rem;
+    }
+    .entry-title { font-weight: 600; }
+    .entry-org   { font-style: italic; }
+    .diamond::before {
+      content: "\22C4";
+      margin-right: 0.4em;
+      color: #555;
+    }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Print: A4 page friendly */
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: white !important; padding: 0 !important; }
+      .cv-shell { box-shadow: none !important; border-radius: 0 !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-200 min-h-screen flex items-start justify-center py-8 px-4 text-slate-800">
+
+  <div class="cv-shell w-full max-w-5xl bg-white shadow-2xl flex flex-col md:flex-row overflow-hidden rounded-sm">
+
+    <!-- ───────────────── LEFT COLUMN ───────────────── -->
+    <aside class="w-full md:w-[33%] cv-blue-bg text-white flex-shrink-0">
+      <!-- top thin bar (matches tex 5mm header strip) -->
+      <div class="h-2 cv-blue-bg"></div>
+
+      <div class="px-8 pt-6 pb-10 flex flex-col gap-5">
+
+        <!-- Name -->
+        <h1 class="text-2xl font-bold tracking-wide">GUI Yuntao</h1>
+
+        <!-- Profile photo -->
+        <div class="w-full">
+          <img src="profile.png" alt="GUI Yuntao"
+               class="w-full aspect-square object-cover"
+               onerror="this.style.display='none'"/>
+        </div>
+
+        <!-- Profile -->
+        <section>
+          <div class="head-left">Profile</div>
+          <div class="head-left-rule"></div>
+          <p class="text-[0.92rem] leading-relaxed">
+            I help maximize GPU efficiency and build LLM training pipelines: the kind of edge your competitors wish they had first.
+          </p>
+        </section>
+
+        <!-- Contact -->
+        <section>
+          <div class="head-left">Contact details</div>
+          <div class="head-left-rule"></div>
+          <ul class="space-y-1.5 text-[0.92rem]">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap w-4 text-center"></i>
+              <span>PhD of CSE, CUHK</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-at w-4 text-center"></i>
+              <span class="text-[0.85rem]">ytgui@cse.cuhk.edu.hk</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-globe w-4 text-center"></i>
+              <a href="https://github.com/ytgui" class="hover:underline">github.com/ytgui</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-brands fa-google-scholar w-4 text-center"></i>
+              <a href="https://scholar.google.com/citations?user=lBNXE1wAAAAJ" class="hover:underline">google scholar</a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Skills -->
+        <section>
+          <div class="head-left">Skills</div>
+          <div class="head-left-rule"></div>
+          <ul class="text-[0.92rem] leading-relaxed list-disc pl-5 space-y-0.5 marker:text-white/70">
+            <li>C/C++, Python, Golang</li>
+            <li>PyTorch, JAX</li>
+            <li>CUDA, GPU architecture, distributed training</li>
+            <li>LLM post-training, RLHF, quantization, fine-tuning, RAG, vector search</li>
+          </ul>
+        </section>
+
+      </div>
+    </aside>
+
+    <!-- ───────────────── RIGHT COLUMN ───────────────── -->
+    <main class="flex-1 bg-white px-10 pt-8 pb-10">
+
+      <!-- Logo top-right -->
+      <div class="flex justify-end mb-2">
+        <img src="logo.png" alt="" class="h-16 object-contain"
+             onerror="this.style.display='none'"/>
+      </div>
+
+      <!-- Experience -->
+      <section class="mt-2">
+        <div class="head-right">Experience</div>
+        <div class="head-right-rule"></div>
+
+        <div class="mt-3 space-y-3 text-[0.95rem]">
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">Research Assistant and Ph.D in Computer Science Engineering</span>
+                at <span class="entry-org italic">The Chinese University of Hong Kong</span>.
+              </p>
+              <span class="font-bold whitespace-nowrap">2021&ndash;2026</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              GPU Optimization, Agentic System, LLM Post-training.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">Software Engineer</span>
+                at <span class="entry-org italic">Huawei 2012 Labs</span>.
+              </p>
+              <span class="font-bold whitespace-nowrap">2018.10&ndash;2020.6</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              Huawei's GPU/NPU Project: operator, runtime, compiler optimization. Work based on Shanghai and Hangzhou, quit the job during COVID-19.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">B.Eng of Computer Science and Automation</span>
+                at <span class="entry-org italic">Chongqing University.</span>
+              </p>
+              <span class="font-bold whitespace-nowrap">2014&ndash;2018</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              Member of MSRA Student Association; Member of DJI RoboMaster Team.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section class="mt-7">
+        <div class="head-right">Research</div>
+        <div class="head-right-rule"></div>
+
+        <div class="mt-3 space-y-3 text-[0.95rem]">
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">Search-R3: Unifying reasoning and embedding in large language models</span>
+                — Y Gui et al.
+              </p>
+              <span class="font-bold whitespace-nowrap">under-review</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              Post-trains LLMs to produce latent embedding representations.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">PilotANN: Memory-bounded gpu acceleration for vector search</span>
+                — Y Gui et al.
+              </p>
+              <span class="font-bold whitespace-nowrap">SIGKDD</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              GPU acceleration for vector search in RAG pipelines.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">SPT: Fine-tuning transformer-based language models efficiently with sparsification</span>
+                — Y Gui et al.
+              </p>
+              <span class="font-bold whitespace-nowrap">preprint</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              A sparse attention approach developed concurrently with DeepSeek Sparse Attention (DSA), discontinued as DSA proved superior.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">HGL: Accelerating heterogeneous GNN training with holistic representation and optimization</span>
+                — Y Gui et al.
+              </p>
+              <span class="font-bold whitespace-nowrap">SC</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              20&times; GPU speedup by compiler optimization on traditional neural networks.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2">
+              <p class="flex-1 leading-snug">
+                <span class="entry-title">Vertex-centric visual programming for graph neural networks</span>
+                — Y Wu, Y Gui, et al.
+              </p>
+              <span class="font-bold whitespace-nowrap">SIGMOD</span>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-0.5">
+              An MLOps platform for recommendation systems.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section class="mt-7">
+        <div class="head-right">Featured Projects</div>
+        <div class="head-right-rule"></div>
+
+        <div class="mt-4 space-y-5">
+
+          <div>
+            <div class="flex justify-center">
+              <img src="projects/search-r3.png" alt="Search-R3"
+                   class="h-36 object-contain"
+                   onerror="this.style.display='none'"/>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-2 text-center px-2">
+              <a href="https://arxiv.org/abs/2510.07048" class="cv-blue-text hover:underline font-medium">Search-R3</a>,
+              a novel post-training framework that adapts LLMs to generate search embeddings directly through their chain-of-thought reasoning process.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex justify-center">
+              <img src="projects/sonnet-9b.png" alt="Qwen3.5-Sonnet-9B"
+                   class="h-44 object-contain"
+                   onerror="this.style.display='none'"/>
+            </div>
+            <p class="diamond text-[0.85rem] text-slate-700 mt-2 text-center px-2">
+              <a href="https://huggingface.co/ytgui/Qwen3.5-Sonnet-9B" class="cv-blue-text hover:underline font-medium">Qwen3.5-Sonnet-9B</a>,
+              an offline-RL distilled LLM for agentic coding. FP8-quantized, fits on a single 24&nbsp;GB GPU with 200K context, optimized for long tool-call chains in agents like OpenCode and Claude Code.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
