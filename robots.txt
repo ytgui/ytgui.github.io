@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ytgui.github.io/sitemap.xml
